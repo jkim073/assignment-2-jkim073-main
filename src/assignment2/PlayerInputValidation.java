@@ -45,28 +45,25 @@ public class PlayerInputValidation {
         } return true;
     }
 
+
     public int validatePlayerChoice(String prompt, int[] validChoices) {
         while (true) {
             System.out.print(prompt);
-            String userInput = scanner.nextLine().trim();
+            if (scanner.hasNextInt()) {
+                int playerChoice = scanner.nextInt();
+                scanner.nextLine(); // Clear the input buffer
 
-            // Check if user input is a valid integer
-            try {
-                int userChoice = Integer.parseInt(userInput);
-
-                // Check if choice is within validChoices
                 for (int i = 0; i < validChoices.length; i++) {
-                    if (userChoice == validChoices[i]) {
-                        return userChoice;
+                    if (playerChoice == validChoices[i]) {
+                        return playerChoice;
                     }
                 }
-
-                System.out.println("  Invalid input. Please choose from the valid options.");
-            } catch (NumberFormatException e) {
-                System.out.println("  Invalid input. Please enter a valid number.");
+                System.out.println("Invalid input. Please choose from the valid options.");
+            } else {
+                String invalidInput = scanner.nextLine(); // Clear the invalid input
+                System.out.println("Invalid input. Please enter a valid number.");
             }
         }
     }
-
 }
 

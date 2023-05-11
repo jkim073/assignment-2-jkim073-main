@@ -6,6 +6,7 @@ public class GameManager {
 
     private Scanner scanner = new Scanner(System.in);
     private PlayerInputValidation inputValidator = new PlayerInputValidation(scanner);
+    private Game game = new Game();
 
     public void start() {
 
@@ -13,7 +14,7 @@ public class GameManager {
         System.out.println("\n***** Welcome to the Game Manager! *****");
         System.out.print("  Enter your name >> ");
         String playerName = scanner.nextLine();
-        String computerName = "computer";
+        String computerName = game.computerName;
 
 
         int gameChoice = chooseGame(playerName);
