@@ -12,7 +12,7 @@ public class BullsAndCows extends GameMechanics {
 
     AI easyAI = new EasyAI();
     AI mediumAI = new MediumAI();
-    AI hardAI = new HardAI();
+    //AI hardAI = new HardAI();
 
 //    private static final int MAX_GUESSES = 4;
 //    private int[] playerSecretCode;
@@ -43,7 +43,7 @@ public class BullsAndCows extends GameMechanics {
                     break;
                 case 3:
                     System.out.println(computerName + " awakens, ready to dominate!");
-                    chosenAI = new HardAI();
+                    //chosenAI = new HardAI();
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + difficultyLevel);
