@@ -6,7 +6,7 @@ public class GameManager {
 
     private Scanner scanner = new Scanner(System.in);
     private PlayerInputValidation inputValidator = new PlayerInputValidation(scanner);
-    private Game game = new Game();
+    private BullsAndCows bncGame = new BullsAndCows();
 
     public void start() {
 
@@ -14,14 +14,14 @@ public class GameManager {
         System.out.println("\n***** Welcome to the Game Manager! *****");
         System.out.print("  Enter your name >> ");
         String playerName = scanner.nextLine();
-        String computerName = game.computerName;
+        String computerName = bncGame.computerName;
 
 
         int gameChoice = chooseGame(playerName);
 
         if (gameChoice == 1) {
-            Game bullsAndCows = new Game();
-            bullsAndCows.BullsAndCows(playerName);
+            GameMechanics bullsAndCows = new BullsAndCows();
+            bncGame.play(playerName);
 
         } else { System.out.println("Play Wordle");}
 
